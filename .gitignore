@@ -1,0 +1,23 @@
+# Internal tool state - do not commit
+.megamemory/
+.osgrep/
+
+# Dependencies
+node_modules/
+
+# Environment variables
+.env
+
+# Database files
+*.db
+*.db-wal
+*.db-shm
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

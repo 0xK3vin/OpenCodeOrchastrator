@@ -1,0 +1,79 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "plugin": [
+    "opencode-anthropic-auth@latest"
+  ],
+  "agent": {
+    "orchestrator": {
+      "permission": {
+        "task": {
+          "*": "deny",
+          "plan": "allow",
+          "build": "allow",
+          "debug": "allow",
+          "devops": "allow",
+          "explore": "allow"
+        }
+      }
+    },
+    "plan": {
+      "permission": {
+        "task": {
+          "*": "deny"
+        }
+      }
+    },
+    "build": {
+      "permission": {
+        "task": {
+          "*": "deny"
+        }
+      }
+    },
+    "debug": {
+      "permission": {
+        "task": {
+          "*": "deny"
+        }
+      }
+    },
+    "devops": {
+      "permission": {
+        "task": {
+          "*": "deny"
+        }
+      }
+    },
+    "explore": {
+      "permission": {
+        "task": {
+          "*": "deny"
+        }
+      }
+    },
+    "review": {
+      "permission": {
+        "task": {
+          "*": "deny"
+        }
+      }
+    }
+  },
+  "mcp": {
+    "osgrep": {
+      "type": "local",
+      "command": [
+        "osgrep",
+        "mcp"
+      ],
+      "enabled": true
+    },
+    "megamemory": {
+      "type": "local",
+      "command": [
+        "megamemory"
+      ],
+      "enabled": true
+    }
+  }
+}
