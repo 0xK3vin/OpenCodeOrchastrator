@@ -9,7 +9,7 @@ BOLD='\033[1m'
 NC='\033[0m'
 
 CONFIG_DIR="$HOME/.config/opencode"
-BASE_URL="https://raw.githubusercontent.com/0xK3vin/OpenCodeOrchastrator/main"
+BASE_URL="https://raw.githubusercontent.com/0xK3vin/OpenCodeOrchestrator/main"
 
 log_info() {
   printf "%b\n" "${BLUE}[info]${NC} $1"

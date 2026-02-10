@@ -156,7 +156,7 @@ verify_preflight() {
 
   if [[ ! -d "$AGENTS_DIR" ]]; then
     log_error "Expected agent directory not found: $AGENTS_DIR"
-    log_info "Run install first: curl -fsSL https://raw.githubusercontent.com/0xK3vin/OpenCodeOrchastrator/main/install.sh | bash"
+    log_info "Run install first: curl -fsSL https://raw.githubusercontent.com/0xK3vin/OpenCodeOrchestrator/main/install.sh | bash"
     exit 1
   fi
 
