@@ -144,7 +144,7 @@ This ensures only the orchestrator can delegate. All specialists have `task: { "
 
 Do NOT put agent-specific instructions here — those go in the individual agent files.
 
-Do NOT duplicate tool usage instructions here — those are handled by global tool/skill prompts (e.g., `tool/*.ts` files for megamemory and osgrep).
+Do NOT duplicate tool usage instructions here — those are handled by global tool/skill prompts (e.g., `tool/*.ts` files for megamemory).
 
 ## MCP Servers
 

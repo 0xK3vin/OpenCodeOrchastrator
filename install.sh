@@ -98,5 +98,5 @@ fi
 printf "%b\n" "${GREEN}${BOLD}Install complete.${NC}"
 printf "%b\n" "${BOLD}Next steps:${NC}"
 printf "  1) Edit %s/opencode.json with your API keys and server URLs.\n" "$CONFIG_DIR"
-printf "  2) Verify MCP server settings (megamemory, osgrep).\n"
+printf "  2) Verify MCP server settings (megamemory).\n"
 printf "  3) Restart OpenCode.\n"

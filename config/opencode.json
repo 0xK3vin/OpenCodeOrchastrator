@@ -60,14 +60,6 @@
     }
   },
   "mcp": {
-    "osgrep": {
-      "type": "local",
-      "command": [
-        "osgrep",
-        "mcp"
-      ],
-      "enabled": true
-    },
     "megamemory": {
       "type": "local",
       "command": [

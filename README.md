@@ -190,7 +190,6 @@ For full configuration details, see `docs/configuration.md`.
 ## MCP Servers
 
 - `megamemory`: persistent project knowledge graph.
-- `osgrep`: semantic code search.
 
 ## License
 
