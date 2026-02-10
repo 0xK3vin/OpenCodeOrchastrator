@@ -1,20 +1,34 @@
-# OpenCode Orchestrator
+<div align="center">
 
-Multi-agent orchestration for OpenCode: route every task to a specialist instead of forcing one assistant to do everything.
+<img src="assets/banner.svg" alt="OpenCode Orchestrator" width="900">
 
-## Architecture
+<p><strong>Route every task to a specialist instead of forcing one assistant to do everything.</strong></p>
 
-```text
-                           You
-                            |
-                      [orchestrator]
-                       (opus, primary)
-                            |
-            +-------+-------+-------+-------+-------+
-            |       |       |       |       |       |
-         [plan]  [build] [debug] [devops] [explore] [review]
-         opus    codex   opus    sonnet   sonnet    opus
+<p>
+  <a href="#quick-start">Install</a> •
+  <a href="#architecture">Architecture</a> •
+  <a href="#workflow-examples">Workflows</a> •
+  <a href="#model-configuration">Configure</a> •
+  <a href="docs/agents.md">Docs</a>
+</p>
+
+---
+
+### Quick Start
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/0xK3vin/OpenCodeOrchastrator/main/install.sh | bash
 ```
+
+Configure models (optional):
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/0xK3vin/OpenCodeOrchastrator/main/configure.sh | bash
+```
+
+</div>
+
+---
 
 ## The Problem
 
@@ -23,6 +37,12 @@ A single general-purpose agent can do a little bit of everything, but it usually
 ## The Solution
 
 OpenCode Orchestrator uses role-specialized agents with focused prompts, scoped permissions, and model tiering for cost/capability balance. The orchestrator delegates to the right specialist, chains workflows automatically, and uses persistent megamemory context across sessions. You get better outcomes, lower operational risk, and less prompt micromanagement.
+
+## Architecture
+
+<div align="center">
+<img src="assets/architecture.svg" alt="Architecture" width="900">
+</div>
 
 ## Key Benefits
 
@@ -33,6 +53,10 @@ OpenCode Orchestrator uses role-specialized agents with focused prompts, scoped 
 - **One-line install**: `curl -fsSL https://raw.githubusercontent.com/0xK3vin/OpenCodeOrchastrator/main/install.sh | bash`
 
 ## Workflow Examples
+
+<div align="center">
+<img src="assets/workflow.svg" alt="Workflow" width="900">
+</div>
 
 **Simple code change**
 
@@ -111,6 +135,28 @@ Why it matters: you stop re-explaining your codebase every new session.
 | `explore` | Read-only codebase analysis | `anthropic/claude-sonnet-4-20250514` | No | No | No |
 | `review` | Validation and quality gate | `anthropic/claude-opus-4-6` | No | Yes (deny list) | No |
 
+## Model Configuration
+
+Use the interactive configurator:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/0xK3vin/OpenCodeOrchastrator/main/configure.sh | bash
+```
+
+Presets available:
+
+- `Recommended`: Opus reasoning, Sonnet execution, Codex coding (default profile).
+- `All Claude`: Opus reasoning and Sonnet for execution/coding.
+- `All OpenAI`: o3 reasoning, GPT-4.1 execution, Codex coding.
+- `All Google`: Gemini Pro reasoning/coding with Gemini Flash execution.
+- `Budget`: Sonnet everywhere.
+- `Custom`: choose models interactively.
+
+Custom mode supports both:
+
+- Per-tier model selection (Reasoning, Execution, Coding).
+- Per-agent model selection across all 7 agents.
+
 ## File Structure
 
 ```text
@@ -119,6 +165,10 @@ OpenCodeOrchastrator/
 ├── install.sh
 ├── configure.sh
 ├── LICENSE
+├── assets/
+│   ├── banner.svg
+│   ├── architecture.svg
+│   └── workflow.svg
 ├── config/
 │   ├── opencode.json
 │   ├── AGENTS.md
@@ -147,21 +197,10 @@ Installed layout in `~/.config/opencode/`:
 - `commands/*.md`
 - `docs/*.md`
 
-## Quick Start
+## Installation
 
-One-line install:
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/0xK3vin/OpenCodeOrchastrator/main/install.sh | bash
-```
-
-Then configure model assignments (optional):
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/0xK3vin/OpenCodeOrchastrator/main/configure.sh | bash
-```
-
-Manual install:
+<details>
+<summary>Manual Install</summary>
 
 1. Clone this repo.
 2. Copy `config/opencode.json` to `~/.config/opencode/opencode.json`.
@@ -171,34 +210,14 @@ Manual install:
 6. Optionally copy `docs/*.md` to `~/.config/opencode/docs/`.
 7. Copy `config/package.json` to `~/.config/opencode/package.json` and run `npm install`.
 
+</details>
+
 Post-install:
 
 - Edit `~/.config/opencode/opencode.json` with your real API keys.
 - Optionally run model configuration: `curl -fsSL https://raw.githubusercontent.com/0xK3vin/OpenCodeOrchastrator/main/configure.sh | bash`
 - Configure/enable MCP servers you want to use.
 - Restart OpenCode.
-
-## Model Configuration
-
-Use the interactive configurator:
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/0xK3vin/OpenCodeOrchastrator/main/configure.sh | bash
-```
-
-Presets available:
-
-- `Recommended`: Opus reasoning, Sonnet execution, Codex coding (default profile).
-- `All Claude`: Opus reasoning and Sonnet for execution/coding.
-- `All OpenAI`: o3 reasoning, GPT-4.1 execution, Codex coding.
-- `All Google`: Gemini Pro reasoning/coding with Gemini Flash execution.
-- `Budget`: Sonnet everywhere.
-- `Custom`: choose models interactively.
-
-Custom mode supports both:
-
-- Per-tier model selection (Reasoning, Execution, Coding).
-- Per-agent model selection across all 7 agents.
 
 ## Configuration
 

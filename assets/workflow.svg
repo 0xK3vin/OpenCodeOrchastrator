@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="300" viewBox="0 0 900 300" role="img" aria-label="OpenCode Orchestrator workflow diagram">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8b949e"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="900" height="300" rx="14" fill="url(#bg)"/>
+
+  <g opacity="0.22" stroke="#30363d" stroke-width="1">
+    <line x1="40" y1="70" x2="860" y2="70"/>
+    <line x1="40" y1="150" x2="860" y2="150"/>
+    <line x1="40" y1="230" x2="860" y2="230"/>
+  </g>
+
+  <line x1="125" y1="130" x2="180" y2="130" stroke="#8b949e" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="290" y1="130" x2="340" y2="130" stroke="#8b949e" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="450" y1="130" x2="500" y2="130" stroke="#8b949e" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="610" y1="130" x2="660" y2="130" stroke="#8b949e" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="770" y1="130" x2="824" y2="130" stroke="#8b949e" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="35" y="95" width="90" height="70" rx="12" fill="#111a2a" stroke="#c9d1d9" stroke-width="2"/>
+  <text x="80" y="138" text-anchor="middle" fill="#f0f6fc" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="24" font-weight="700">You</text>
+
+  <rect x="180" y="95" width="110" height="70" rx="12" fill="#111a2a" stroke="#58a6ff" stroke-width="2.5"/>
+  <text x="235" y="126" text-anchor="middle" fill="#f0f6fc" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" font-weight="700">Orchestrator</text>
+  <text x="235" y="145" text-anchor="middle" fill="#8b949e" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11">route + synthesize</text>
+
+  <rect x="340" y="95" width="110" height="70" rx="12" fill="#111a2a" stroke="#58a6ff" stroke-width="2.5"/>
+  <text x="395" y="126" text-anchor="middle" fill="#f0f6fc" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="18" font-weight="700">Plan</text>
+  <text x="395" y="145" text-anchor="middle" fill="#8b949e" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11">architecture</text>
+
+  <rect x="500" y="95" width="110" height="70" rx="12" fill="#111a2a" stroke="#d29922" stroke-width="2.5"/>
+  <text x="555" y="126" text-anchor="middle" fill="#f0f6fc" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="18" font-weight="700">Build</text>
+  <text x="555" y="145" text-anchor="middle" fill="#8b949e" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11">implement</text>
+
+  <rect x="660" y="95" width="110" height="70" rx="12" fill="#111a2a" stroke="#58a6ff" stroke-width="2.5"/>
+  <text x="715" y="126" text-anchor="middle" fill="#f0f6fc" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="18" font-weight="700">Review</text>
+  <text x="715" y="145" text-anchor="middle" fill="#8b949e" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11">verify</text>
+
+  <circle cx="840" cy="130" r="16" fill="#0f2a19" stroke="#3fb950" stroke-width="2"/>
+  <text x="840" y="136" text-anchor="middle" fill="#3fb950" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="16" font-weight="700">✓</text>
+
+  <path d="M 715 170 C 715 220, 555 220, 555 170" fill="none" stroke="#8b949e" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="635" y="212" text-anchor="middle" fill="#8b949e" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12">issues found</text>
+</svg>
