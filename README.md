@@ -22,6 +22,20 @@
 curl -fsSL https://raw.githubusercontent.com/0xK3vin/OpenCodeOrchestrator/main/install.sh | bash
 ```
 
+#### Updating
+
+Re-running the installer is update-safe by default:
+
+- Existing agent `model:` values are preserved automatically.
+- If agent prompt body text was customized, the installer prompts you to resolve each conflict (overwrite, skip, or view diff).
+- In non-interactive environments (for example `curl ... | bash` in CI), agent prompt conflicts default to upstream content while preserving your `model:` values and keeping backups.
+
+Use `--force` for a clean overwrite of all installed files:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/0xK3vin/OpenCodeOrchestrator/main/install.sh | bash -s -- --force
+```
+
 Configure models (optional):
 
 ```bash
@@ -233,6 +247,7 @@ Post-install:
 
 For full configuration details, see `docs/configuration.md`.
 
+- The template sets `default_agent` to `orchestrator`, so OpenCode launches into the orchestrator by default.
 - **Model customization**: tune per-agent `model` values in `agents/*.md`.
 - **Permission tuning**: tighten or relax `read/edit/write/bash/task` permissions in frontmatter and `opencode.json`.
 - **Adding/removing agents**: update `agents/`, `opencode.json`, and orchestrator routing docs.

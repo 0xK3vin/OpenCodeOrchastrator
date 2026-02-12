@@ -95,6 +95,7 @@ The JSON config provides a second layer of permissions that supplements (not rep
 
 ```json
 {
+  "default_agent": "orchestrator",
   "agent": {
     "orchestrator": {
       "permission": {
@@ -130,6 +131,8 @@ The JSON config provides a second layer of permissions that supplements (not rep
   }
 }
 ```
+
+`default_agent` controls which primary agent OpenCode loads on launch. This template sets it to `"orchestrator"` by default, and you can change it to any primary agent that fits your workflow. See the official config reference: https://opencode.ai/docs/config/
 
 This ensures only the orchestrator can delegate. All specialists have `task: { "*": "deny" }`.
 
@@ -185,6 +188,19 @@ All agents with bash access share the same deny list for destructive commands:
 This is a safety net, not a security boundary. The agents aren't adversarial — the deny list prevents accidental destructive operations.
 
 Note: Commands prefixed with `sudo` (e.g., `sudo rm -rf /`) would bypass these patterns. This is an accepted trade-off — the agents have no reason to use sudo unless explicitly asked.
+
+## Installer Update Behavior
+
+`install.sh` supports update-safe re-runs and clean overwrite mode.
+
+- Default re-run mode auto-detects existing installs (`~/.config/opencode/agents`) and treats the run as an update.
+- Agent file updates preserve your existing frontmatter `model:` value.
+- If the upstream agent prompt body differs from your installed copy:
+  - Interactive terminal: prompts to overwrite (preserve model), skip, or show diff.
+  - Non-interactive run: overwrites with upstream, preserves model, and warns.
+- During update-safe mode, the installer creates timestamped backups in `~/.config/opencode/agents/.backup-YYYYMMDD-HHMMSS/`.
+- Skipped conflicts save upstream copies as `~/.config/opencode/agents/*.upstream` for manual review.
+- `--force` disables update-safe conflict handling and overwrites installed files.
 
 ## Customization
 
