@@ -198,7 +198,7 @@ Note: Commands prefixed with `sudo` (e.g., `sudo rm -rf /`) would bypass these p
 - If the upstream agent prompt body differs from your installed copy:
   - Interactive terminal: prompts to overwrite (preserve model), skip, or show diff.
   - Non-interactive run: overwrites with upstream, preserves model, and warns.
-- During update-safe mode, the installer creates timestamped backups in `~/.config/opencode/agents/.backup-YYYYMMDD-HHMMSS/`.
+- During update-safe mode, the installer creates timestamped backups in `~/.config/opencode/backups/.backup-YYYYMMDD-HHMMSS/`.
 - Skipped conflicts save upstream copies as `~/.config/opencode/agents/*.upstream` for manual review.
 - `--force` disables update-safe conflict handling and overwrites installed files.
 

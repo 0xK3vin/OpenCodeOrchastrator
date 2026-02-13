@@ -248,7 +248,7 @@ log_info "Preparing config directories..."
 mkdir -p "$CONFIG_DIR" "$CONFIG_DIR/agents" "$CONFIG_DIR/commands" "$CONFIG_DIR/docs"
 
 if [[ "$IS_UPDATE" == true ]] && [[ "$FORCE_MODE" == false ]]; then
-  BACKUP_DIR="$CONFIG_DIR/agents/.backup-$(date +%Y%m%d-%H%M%S)"
+  BACKUP_DIR="$CONFIG_DIR/backups/.backup-$(date +%Y%m%d-%H%M%S)"
   mkdir -p "$BACKUP_DIR"
   cp "$CONFIG_DIR/agents/"*.md "$BACKUP_DIR/" 2>/dev/null || true
   log_info "Created agent backup at: $BACKUP_DIR"

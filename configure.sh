@@ -449,7 +449,7 @@ show_confirmation() {
 
 backup_agents() {
   local backup_path
-  backup_path="$AGENTS_DIR/.backup-$(date +%Y%m%d-%H%M%S)"
+  backup_path="$CONFIG_DIR/backups/.backup-$(date +%Y%m%d-%H%M%S)"
   mkdir -p "$backup_path"
   cp "$AGENTS_DIR"/*.md "$backup_path/"
   BACKUP_PATH="$backup_path"
