@@ -349,7 +349,7 @@ if [[ "$IS_UPDATE" == true ]] && [[ "$FORCE_MODE" == false ]]; then
   fi
   printf "\n%b\n" "${BOLD}Next steps:${NC}"
   printf "  1) Review any *.upstream files in %s/agents (if listed above).\n" "$CONFIG_DIR"
-  printf "  2) Verify MCP server settings (megamemory).\n"
+  printf "  2) Verify MCP server settings (megamemory, exa, grep_app are pre-configured).\n"
   printf "  3) Restart OpenCode.\n"
 else
   printf "%b\n" "${GREEN}${BOLD}Install complete.${NC}"
@@ -360,6 +360,6 @@ else
   else
     printf "  2) Optionally run model configurator: curl -fsSL %s/configure.sh | bash\n" "$BASE_URL"
   fi
-  printf "  3) Verify MCP server settings (megamemory).\n"
+  printf "  3) Verify MCP server settings (megamemory, exa, grep_app are pre-configured).\n"
   printf "  4) Restart OpenCode.\n"
 fi

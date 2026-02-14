@@ -264,6 +264,8 @@ For full configuration details, see `docs/configuration.md`.
 ## MCP Servers
 
 - `megamemory`: persistent project knowledge graph.
+- `exa`: free web search, code docs lookup, and URL crawling via Exa AI. No API key required.
+- `grep_app`: free GitHub code search across millions of public repos via grep.app. No API key required.
 
 ## License
 

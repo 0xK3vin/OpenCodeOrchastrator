@@ -167,6 +167,18 @@ MCP servers are configured in `opencode.json` under the `mcp` key. These provide
 }
 ```
 
+### Included MCP Servers
+
+Three MCP servers are pre-configured out of the box:
+
+| Server | Type | Description | API Key Required |
+|--------|------|-------------|------------------|
+| `megamemory` | local | Persistent project knowledge graph across sessions | No (local binary) |
+| `exa` | local | Web search, code docs lookup, and URL crawling via Exa AI | No (free hosted endpoint) |
+| `grep_app` | remote | GitHub code search across millions of public repos via grep.app | No (free hosted endpoint) |
+
+`exa` and `grep_app` are free, zero-config servers that work immediately with no API keys or environment variables. `exa` uses `npx mcp-remote` as a bridge to the Exa AI hosted MCP endpoint. `grep_app` connects directly to the grep.app remote MCP server.
+
 The agents in this setup are designed to work with these MCP servers but don't require them. Tool-specific behavior instructions live in `tool/*.ts` skill files, not in agent prompts.
 
 ## Bash Deny List
